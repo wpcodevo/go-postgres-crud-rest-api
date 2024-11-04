@@ -14,4 +14,4 @@ install-modules:
 	go get -u gorm.io/gorm
 	go get gorm.io/driver/postgres
 	go get github.com/spf13/viper
-	go install github.com/cosmtrek/air@latest
+	go install github.com/air-verse/air@latest

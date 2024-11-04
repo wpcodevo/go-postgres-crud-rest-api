@@ -22,5 +22,5 @@ func main() {
 		})
 	})
 
-	log.Fatal(app.Listen(":" + env.DBPort))
+	log.Fatal(app.Listen(":" + env.ServerPort))
 }
