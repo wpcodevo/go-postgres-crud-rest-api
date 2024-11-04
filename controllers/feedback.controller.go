@@ -37,7 +37,7 @@ func CreateFeedbackHandler(c *fiber.Ctx) error {
 
 	result := initializers.DB.Create(&newFeedback)
 
-	if result.Error != nil && strings.Contains(result.Error.Error(), "Duplicate entry") {
+	if result.Error != nil && strings.Contains(result.Error.Error(), "duplicate key value violates unique") {
 		return c.Status(fiber.StatusConflict).JSON(fiber.Map{"status": "fail", "message": "Feedback already exists"})
 	} else if result.Error != nil {
 		return c.Status(fiber.StatusBadGateway).JSON(fiber.Map{"status": "error", "message": result.Error.Error()})
@@ -91,9 +91,12 @@ func UpdateFeedbackHandler(c *fiber.Ctx) error {
 	if payload.Feedback != "" {
 		updates["feedback"] = payload.Feedback
 	}
+	if payload.Status != "" {
+		updates["status"] = payload.Status
+	}
 
 	if payload.Rating != nil {
-		updates["published"] = payload.Rating
+		updates["rating"] = payload.Rating
 	}
 
 	updates["updated_at"] = time.Now()
