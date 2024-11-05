@@ -2,7 +2,7 @@
 
 In this article, you will learn how to create a CRUD REST API in Golang using Fiber as the web framework and PostgreSQL as the database.
 
-![CRUD Operations on PostgreSQL with a Golang REST API](https://codevoweb.com/wp-content/uploads/2024/11/How-to-Validate-React.js-Forms-Without-External-Libraries.webp)
+![CRUD Operations on PostgreSQL with a Golang REST API](https://codevoweb.com/wp-content/uploads/2024/11/CRUD-Operations-on-PostgreSQL-with-a-Golang-REST-API.webp)
 
 ## Topics Covered
 
